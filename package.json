@@ -1,0 +1,16 @@
+{
+  "name": "travel",
+  "version": "0.0.1",
+  "description": "my first node app",
+  "main": "traveller.js",
+  "dependencies": {
+    "express3-handlebars": "^0.5.2",
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Divine Dube",
+  "license": "ISC"
+}
