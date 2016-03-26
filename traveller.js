@@ -1,9 +1,11 @@
 var express = require("express");
+//.create creates a handle bar instance
+var handlebars = require('express3-handlebars').create({defaultLayout: 'main'});
+var fortuneGen = require('./lib/fortune.js')
 
 var app = express();
 
-//.create creates a handle bar instance
-var handlebars = require('express3-handlebars').create({defaultLayout: 'main'});
+
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
@@ -13,17 +15,8 @@ app.get('/',function(req, res) {
 	res.render('index');
 });
 
-var fortunes = [
-"Conquer your fears or they will conquer you.",
-"Rivers need springs.",
-"Do not fear what you don't know.",
-"You will have a pleasant surprise.",
-"Whenever possible, keep it simple.",
-];
-
 app.get('/about',function(req, res) {
-	var randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-	res.render('about', { fortune : randomFortune });
+	res.render('about', { fortune : fortuneGen.getFortune() });
 });
 
 app.use(function(err, req, res, next){
