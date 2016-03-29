@@ -1,0 +1,10 @@
+<div class="wheatherWidget">
+	{{#each partials.weather.locations}}
+		<div class="location ">
+			<h4>{{name}}</h4>
+			<a href="{{forcastUrl}}"> <img src="{{imgUrl}}" alt="{{weather}}" /> 
+			 {{weather}} {{temp}}
+			</a>
+		</div>
+	{{/each}}
+</div>
