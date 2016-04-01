@@ -3,6 +3,7 @@ var app = express();
 var formidable = require('formidable');
 var credentials = require('./credentials');
 var cookies = require('cookie-parser');
+var mailer = require('nodemailer');
 
 //.create creates a handle bar instance
 var handlebars = require('express3-handlebars').create({
@@ -138,6 +139,25 @@ app.use(function(err, req, res, next){
 	res.render('500');
 });
 
+// var mailTransport = mailer.createTransport('SMTP', {
+// 	service: 'Gmail',
+// 	auth: {
+// 		user: credentials.user.email, 
+// 		pass: credentials.user.password
+// 	}
+
+// });
+
+// mailTransport.sendMail({
+// from: '"Meadowlark Travel" <info@meadowlarktravel.com>',
+// to: 'joecustomer@gmail.com',
+// subject: 'Your Meadowlark Travel Tour',
+// text: 'Thank you for booking your trip with Meadowlark Travel.  ' +
+// 'We look forward to your visit!',
+// }, function(err){
+// if(err) console.error( 'Unable to send email: ' + err);
+// });
+// console.log('sending mail ');
 
 function getWeatherData(){  //TODO: should put this in its own library
 return {
