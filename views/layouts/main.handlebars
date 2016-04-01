@@ -6,9 +6,19 @@
  {{/if}}
 
  <script type="text/javascript" src="/vendor/jquery-2.1.1.min.js"></script>
+ {{{_sections.head}}}
 </head>
 <body >
   <header ><img src="/img/logo.png" alt="travel logo"></header>
+  <div class="flash">
+  		{{#if flash}}
+  			<div class="alert alert-dismissible alert-{{flash.type}}">
+  					<button type="button" class="role" data-dismiss="alert" aria-hidden="true"> &times</button>
+  					<strong>{{flash.intro}}</strong>
+  					{{{flash.message}}}
+  			</div>
+  		{{/if}}
+  <div>
 	{{{body}}}
 
 {{#if showTests}}
@@ -25,5 +35,7 @@ var assert = chai.assert;
 {{/if}}
 <script>mocha.run();</script>
 {{/if}}
+
+{{{_sections.jquery}}}
 </body>
 </html>

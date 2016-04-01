@@ -4,8 +4,13 @@
   "description": "my first node app",
   "main": "traveller.js",
   "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
     "express3-handlebars": "^0.5.2",
-    "express": "^4.13.4"
+    "formidable": "^1.0.17",
+    "jquery-file-upload-middleware": "^0.1.7"
   },
   "devDependencies": {
     "chai": "^3.5.0",
