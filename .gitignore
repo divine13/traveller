@@ -1,4 +1,4 @@
 #igonre the node modules package
 
 node_modules
-./credentials.js
+credentials.js
